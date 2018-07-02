@@ -36,11 +36,15 @@ module Data.Svfactor.Text.Space
   )
 where
 
+import Control.Applicative (Applicative (..))
 import Control.DeepSeq (NFData (rnf))
 import Control.Lens (Lens, Prism', prism, prism')
+import Data.Foldable (Foldable (..))
+import Data.Monoid (mempty)
 import Data.Semigroup (Semigroup ((<>)))
 import Data.Text (Text)
 import qualified Data.Text as Text
+import Data.Traversable (Traversable (..))
 import qualified Data.Vector as V
 import GHC.Generics (Generic)
 

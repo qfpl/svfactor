@@ -1,5 +1,6 @@
 module Data.Svfactor.Example.Concat where
 
+import Control.Applicative (Applicative ((<*>), pure), (<$>))
 import Control.Lens ((&), (.~))
 import Data.ByteString (ByteString)
 import Text.Trifecta (CharParsing, parseFromFile)

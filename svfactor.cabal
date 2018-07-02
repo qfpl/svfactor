@@ -36,7 +36,8 @@ bug-reports:         https://github.com/qfpl/sv/issues
 build-type:          Simple
 extra-source-files:  changelog.md
 cabal-version:       >=1.10
-tested-with:         GHC == 7.10.3
+tested-with:         GHC == 7.8.4
+                     , GHC == 7.10.3
                      , GHC == 8.0.2
                      , GHC == 8.2.2
                      , GHC == 8.4.3
@@ -68,7 +69,7 @@ library
   -- other-modules:
   -- other-extensions:    
   build-depends:       attoparsec >= 0.12.1.4 && < 0.14
-                       , base >=4.8 && <5
+                       , base >=4.7 && <5
                        , bifunctors >= 5.1 && < 6
                        , bytestring >= 0.9.1.10 && < 0.11
                        , charset >=0.3 && <=0.4
@@ -101,7 +102,7 @@ test-suite             tasty
   default-language:
                        Haskell2010
   build-depends:
-                       base >=4.8 && <5
+                       base >=4.7 && <5
                        , bytestring >= 0.9.1.10 && < 0.11
                        , hedgehog >= 0.5 && < 0.7
                        , lens >= 4 && < 5

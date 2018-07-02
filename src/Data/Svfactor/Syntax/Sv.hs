@@ -46,6 +46,7 @@ module Data.Svfactor.Syntax.Sv (
   , tab
 ) where
 
+import Control.Applicative (Applicative ((<*>), pure), (<$>))
 import Control.DeepSeq (NFData)
 import Control.Lens (Lens, Lens', Traversal')
 import Data.Foldable (Foldable (foldMap))

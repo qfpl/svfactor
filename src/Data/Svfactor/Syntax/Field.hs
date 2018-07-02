@@ -24,6 +24,7 @@ module Data.Svfactor.Syntax.Field (
   , fieldContents
 ) where
 
+import Control.Applicative ((<$>))
 import Control.DeepSeq (NFData)
 import Control.Lens (Lens, Prism', Traversal, lens, prism)
 import Data.Foldable (Foldable (foldMap))

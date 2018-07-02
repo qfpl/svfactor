@@ -22,6 +22,7 @@ module Data.Svfactor.Parse (
 , attoparsecText
 ) where
 
+import Control.Applicative ((<$>))
 import Control.Lens (view)
 import Control.Monad.IO.Class (MonadIO, liftIO)
 import qualified Data.Attoparsec.ByteString as BS (parseOnly)
@@ -29,6 +30,7 @@ import qualified Data.Attoparsec.Text as Text (parseOnly)
 import Data.Bifunctor (first)
 import Data.ByteString (ByteString)
 import qualified Data.ByteString as BS
+import Data.Monoid (mempty)
 import Data.Text (Text)
 import qualified Data.Text.IO as Text
 import qualified Text.Trifecta as Trifecta

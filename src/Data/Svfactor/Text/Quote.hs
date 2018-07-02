@@ -20,6 +20,7 @@ module Data.Svfactor.Text.Quote (
   , quoteToString
 ) where
 
+import Control.Applicative (pure)
 import Control.DeepSeq (NFData (rnf))
 import Control.Lens (Prism', prism, prism', review)
 import Data.String (IsString (fromString))

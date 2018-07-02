@@ -33,11 +33,13 @@ module Data.Svfactor.Syntax.Record (
   , recordList
 ) where
 
+import Control.Applicative (Applicative (..), (<$>))
 import Control.DeepSeq (NFData)
 import Control.Lens (Lens, Lens', Iso, Prism, Prism', Traversal', _1, _2, beside, iso, prism, prism', toListOf)
 import Data.Foldable (Foldable (foldMap))
 import Data.Functor (Functor (fmap))
 import Data.List.NonEmpty (NonEmpty ((:|)))
+import Data.Monoid (Monoid (..))
 import Data.Semigroup (Semigroup)
 import Data.Traversable (Traversable (traverse))
 import Data.Vector (Vector)

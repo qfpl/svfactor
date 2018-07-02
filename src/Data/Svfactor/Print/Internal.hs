@@ -24,6 +24,8 @@ module Data.Svfactor.Print.Internal (
 import Control.Lens (review, view)
 import Data.Bifoldable (bifoldMap)
 import Data.ByteString.Builder as BSB
+import Data.Foldable (Foldable (foldMap))
+import Data.Monoid (Monoid (mempty))
 import Data.Semigroup ((<>))
 import Data.Semigroup.Foldable (intercalate1)
 

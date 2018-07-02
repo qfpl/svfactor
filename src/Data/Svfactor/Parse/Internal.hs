@@ -25,7 +25,7 @@ module Data.Svfactor.Parse.Internal (
   , ending
 ) where
 
-import Control.Applicative (Alternative ((<|>), empty), optional)
+import Control.Applicative (Applicative ((<*>), pure), (*>), (<*), (<$), Alternative ((<|>), empty), optional)
 import Control.Lens (review, view)
 import Data.CharSet (CharSet, (\\))
 import qualified Data.CharSet as CharSet (fromList, insert, singleton)

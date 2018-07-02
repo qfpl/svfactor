@@ -17,11 +17,14 @@ module Data.Svfactor.Vector.NonEmpty (
 , tailNev
 ) where
 
+import Control.Applicative (Applicative (..), (<$>))
 import Control.DeepSeq (NFData)
 import Control.Lens (Lens', lens)
 import Data.Functor.Apply (Apply((<.>)))
-import Data.Foldable (toList)
+import Data.Foldable (Foldable (..), toList)
 import Data.List.NonEmpty (NonEmpty ((:|)))
+import Data.Monoid (mappend)
+import Data.Traversable (Traversable (..))
 import Data.Semigroup (Semigroup ((<>)))
 import Data.Semigroup.Foldable (Foldable1 (foldMap1))
 import Data.Semigroup.Traversable (Traversable1 (traverse1))

@@ -28,6 +28,7 @@ description:
   Please note that there are __known performance problems with svfactor__.
   .
   Examples:
+  .
   * Handling multiple logical documents in one file: <https://github.com/qfpl/svfactor/blob/master/examples/src/Data/Svfactor/Example/Concat.hs Concat.hs>
   * Fixing inconsistent formatting with lenses: <https://github.com/qfpl/svfactor/blob/master/examples/src/Data/Svfactor/Example/Requote.hs Requote.hs>
 

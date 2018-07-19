@@ -8,10 +8,10 @@ Portability : non-portable
 -}
 
 module Data.Svfactor.Parse (
-  parse
-, parse'
-, parseFromFile
-, parseFromFile'
+  parseSv
+, parseSv'
+, parseSvFromFile
+, parseSvFromFile'
 , separatedValues
 
 , module Data.Svfactor.Parse.Options
@@ -42,30 +42,30 @@ import Data.Svfactor.Parse.Options
 -- | Parse a 'ByteString' as an Sv.
 --
 -- This version uses Trifecta, hence it assumes its input is UTF-8 encoded.
-parse :: ParseOptions ByteString -> ByteString -> Either ByteString (Sv ByteString)
-parse = parse' trifecta
+parseSv :: ParseOptions ByteString -> ByteString -> Either ByteString (Sv ByteString)
+parseSv = parseSv' trifecta
 
 -- | Parse some text as an Sv.
 --
 -- This version lets you choose which parsing library to use by providing an
 -- 'SvParser'. Common selections are 'trifecta' and 'attoparsecByteString'.
-parse' :: SvParser s -> ParseOptions s -> s -> Either s (Sv s)
-parse' svp opts s =
+parseSv' :: SvParser s -> ParseOptions s -> s -> Either s (Sv s)
+parseSv' svp opts s =
   let enc = view encodeString opts
   in  first enc $ runSvParser svp opts s
 
 -- | Load a file and parse it as an 'Sv'.
 --
 -- This version uses Trifecta, hence it assumes its input is UTF-8 encoded.
-parseFromFile :: MonadIO m => ParseOptions ByteString -> FilePath -> m (Either ByteString (Sv ByteString))
-parseFromFile = parseFromFile' trifecta
+parseSvFromFile :: MonadIO m => ParseOptions ByteString -> FilePath -> m (Either ByteString (Sv ByteString))
+parseSvFromFile = parseSvFromFile' trifecta
 
 -- | Load a file and parse it as an 'Sv'.
 --
 -- This version lets you choose which parsing library to use by providing an
 -- 'SvParser'. Common selections are 'trifecta' and 'attoparsecByteString'.
-parseFromFile' :: MonadIO m => SvParser s -> ParseOptions s -> FilePath -> m (Either s (Sv s))
-parseFromFile' svp opts fp =
+parseSvFromFile' :: MonadIO m => SvParser s -> ParseOptions s -> FilePath -> m (Either s (Sv s))
+parseSvFromFile' svp opts fp =
   let enc = view encodeString opts
   in  liftIO (first enc <$> runSvParserFromFile svp opts fp)
 

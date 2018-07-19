@@ -3,14 +3,18 @@ module Data.Svfactor.Example.Concat where
 import Control.Applicative (Applicative ((<*>), pure), (<$>))
 import Control.Lens ((&), (.~))
 import Data.ByteString (ByteString)
+import qualified Data.ByteString as BS
 import Text.Trifecta (CharParsing, parseFromFile)
 import System.Exit (exitFailure)
 
 import Data.Svfactor.Syntax
 import Data.Svfactor.Parse
+import Data.Svfactor.Print
 
-file :: FilePath
+file, out1, out2 :: FilePath
 file = "csv/concat.csv"
+out1 = "csv/concat1.csv"
+out2 = "csv/concat2.csv"
 
 opts :: ParseOptions ByteString
 opts = defaultParseOptions & endOnBlankLine .~ True
@@ -26,4 +30,6 @@ main = do
   d <- parseFromFile parser file
   case d of
     Nothing -> exitFailure
-    Just _  -> pure ()
+    Just (csv1,csv2) -> do
+      BS.writeFile out1 (printSv csv1)
+      BS.writeFile out2 (printSv csv2)

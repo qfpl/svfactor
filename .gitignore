@@ -5,6 +5,9 @@
 benchmarks/data
 dist/
 dist-newstyle/
+examples/csv/concat1.csv
+examples/csv/concat2.csv
+examples/csv/requote.fixed.csv
 cabal-dev/
 .cabal-sandbox/
 cabal.sandbox.config

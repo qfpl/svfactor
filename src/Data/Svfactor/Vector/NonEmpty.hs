@@ -13,6 +13,7 @@ module Data.Svfactor.Vector.NonEmpty (
   NonEmptyVector (NonEmptyVector)
 , fromNel
 , toNel
+, toVector
 , headNev
 , tailNev
 ) where
@@ -46,6 +47,10 @@ fromNel (a :| as) = NonEmptyVector a (V.fromList as)
 -- | Convert a 'NonEmptyVector' to a 'NonEmpty' list
 toNel :: NonEmptyVector a -> NonEmpty a
 toNel (NonEmptyVector a as) = a :| V.toList as
+
+-- | Convert a 'NonEmptyVector' back to a 'Vector'
+toVector :: NonEmptyVector a -> Vector a
+toVector (NonEmptyVector a as) = V.cons a as
 
 instance Functor NonEmptyVector where
   fmap f (NonEmptyVector a as) = NonEmptyVector (f a) (fmap f as)

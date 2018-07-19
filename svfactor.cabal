@@ -32,8 +32,8 @@ description:
   * Handling multiple logical documents in one file: <https://github.com/qfpl/svfactor/blob/master/examples/src/Data/Svfactor/Example/Concat.hs Concat.hs>
   * Fixing inconsistent formatting with lenses: <https://github.com/qfpl/svfactor/blob/master/examples/src/Data/Svfactor/Example/Requote.hs Requote.hs>
 
-homepage:            https://github.com/qfpl/sv
-bug-reports:         https://github.com/qfpl/sv/issues
+homepage:            https://github.com/qfpl/svfactor
+bug-reports:         https://github.com/qfpl/svfactor/issues
 build-type:          Simple
 extra-source-files:  changelog.md
 cabal-version:       >=1.10
@@ -45,7 +45,7 @@ tested-with:         GHC == 7.8.4
 
 source-repository    head
   type:              git
-  location:          git@github.com/qfpl/sv.git
+  location:          git@github.com/qfpl/svfactor.git
 
 library
   exposed-modules:     Data.Svfactor

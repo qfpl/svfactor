@@ -110,7 +110,7 @@ test-suite             tasty
                        , parsers >=0.12 && <0.13
                        , semigroups >= 0.18 && < 0.19
                        , svfactor
-                       , tasty >= 0.11 && < 1.2
+                       , tasty >= 0.11 && < 1.3
                        , tasty-hedgehog >= 0.1 && < 0.3
                        , tasty-hunit >= 0.9 && < 0.11
                        , text >= 1.0 && < 1.3

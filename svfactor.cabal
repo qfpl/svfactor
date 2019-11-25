@@ -10,7 +10,7 @@ synopsis:
   Syntax-preserving CSV manipulation
 
 description:
-  <<http://i.imgur.com/uZnp9ke.png>>
+  <<https://raw.githubusercontent.com/qfpl/assets/master/data61-transparent-bg.png>>
   .
   svfactor is a library for parsing, manipulating, and printing CSV and
   similar formats (such as PSV, TSV, and many more).
